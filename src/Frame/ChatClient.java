@@ -99,55 +99,83 @@ public class ChatClient extends JFrame implements ActionListener
 	    dialogLogin.getContentPane().add(buttonReg);
 	    dialogLogin.setBounds(300,300,250,180);
 	    dialogLogin.getContentPane().setBackground(new Color(240,248,255));
-	    dialogLogin.addWindowListener(new WindowListener()//设置监听，关闭登录窗口时退出程序
-	    {
-			
-			@Override
-			public void windowOpened(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void windowIconified(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void windowDeiconified(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void windowDeactivated(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
-				System.exit(0);
-			
-			}
-			
-			@Override
-			public void windowClosed(WindowEvent e) {
-			
-			}
-			
-			@Override
-			public void windowActivated(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+	    setlistener();
 	    dialogLogin.setResizable(false);
 	    dialogLogin.setVisible(true);
 	}
 
+
+	private void setlistener() 
+	{
+		dialogLogin.addWindowListener(new WindowListener()//设置监听，关闭登录窗口时退出程序
+			    {
+					
+					@Override
+					public void windowOpened(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void windowIconified(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void windowDeiconified(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void windowDeactivated(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void windowClosing(WindowEvent e) {
+						// TODO Auto-generated method stub
+						System.exit(0);
+					
+					}
+					
+					@Override
+					public void windowClosed(WindowEvent e) {
+					
+					}
+					
+					@Override
+					public void windowActivated(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+				});
+		textTalk.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(e.getKeyCode()==KeyEvent.VK_ENTER)
+				{
+					buttonTalk.doClick();
+				}
+				
+			}
+		});
+	}
 
 	public static void main(String[]args)
 	{
